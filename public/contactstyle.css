@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: "Montserrat";
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.showactive{
+    color: green;
+    border-bottom: 2px solid green;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.2)), url('img/nature.jpeg');
+    background-size: cover;
+ 
+}
+
+.btn-success{
+    margin-top: 3px;
+    margin-left: 20px;
+    background-color: green;
+    font-size: 15px;
+    border-radius: 50px;
+    transition: all 0.5s ease-in; 
+}
+
+.btn-success:hover{
+    color: green;
+    background-color: white;
+    transform: scale(1.1);
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+.navbar-brand{
+    font-size: 25px;
+    transition: all 0.5s ease-in; 
+}
+
+.navbar-brand:hover{
+    transform: scale(1.3);
+}
+
+.nav-link{
+    font-size: 15px;
+}
+
+.nav-link:hover{
+    color: green;
+} 
+
+.col-md-6{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 50px;
+    margin-top: -10px;
+}
+
+.col-md-5{
+    padding-top: 100px; 
+    margin-top: -10px;
+    margin-left: 50px;
+}
+
+.self1{
+    text-align: center;
+    color: white;
+}
+
+.self2{
+    text-align: justify;
+    color: white;
+}
+
+.text-center{
+    color: white;
+}
+
+.form-group{
+    color: white;
+}

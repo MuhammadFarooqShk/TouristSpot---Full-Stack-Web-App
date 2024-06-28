@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+
+    .container {
+      margin-top: 100px;
+    }
+
+    .navbar-brand {
+      font-size: 2em;
+      color: white;
+    }
+
+    .card {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .card-header {
+      border-radius: 10px 10px 0 0;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      background-color: #2575fc;
+    }
+
+    .card-body {
+      padding: 2em;
+    }
+
+    .form-group label {
+      color: #333;
+      font-weight: bold;
+    }
+
+    .form-control {
+      border-radius: 5px;
+      padding: 15px;
+      font-size: 1em;
+    }
+
+    .btn-success {
+      border: none;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    .btn-success:hover {
+      background-color: white;
+      color: green;
+    }
+
+    .form-group {
+      margin-bottom: 1.5em;
+    }
+  </style>
+</head>
+<body style="background-color: rgb(164, 164, 164);">
+  <div class="container" style="margin-top: -10px;margin-bottom: 10px;">
+    <div class="row justify-content-center">
+      <div class="col-md-12 text-center">
+        <a class="navbar-brand" href="" style="color: white;font-size: 40px;">Tourist<span class="text-success" style="font-size: 40px;">Spot</span></a>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header text-white" style="background-color: green;">
+            <h4 class="mb-0">Sign Up</h4>
+          </div>
+          <div class="card-body">
+            <form action="" method="POST">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+              </div>
+              <div class="form-group">
+                <label for="number">Phone Number</label>
+                <input type="text" class="form-control" id="number" name="number" required>
+              </div>
+              <button type="submit" class="btn btn-success" style="border-radius: 50px;">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

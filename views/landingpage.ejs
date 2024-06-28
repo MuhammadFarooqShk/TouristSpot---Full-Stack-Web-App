@@ -1,0 +1,154 @@
+<head>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .highlight-background {
+      background-color: rgb(196, 196, 196);
+      padding: 20px;
+    }
+    .self1{
+
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+color: green; 
+}
+  </style>
+</head>
+
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      
+      <div class="carousel-item active">
+        <img src="img/carousel_3.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption">
+          <h5>Explore Exotic Destinations</h5>
+          <p>Discover stunning global destinations for your next exciting adventure</p>
+          <p><a href="/product" class="btn btn-success mt-3">Learn More</a></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/carousel_2.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption">
+          <h5> Indulge in Unparalleled Luxury</h5>
+          <p>Indulge in lavish accommodations and world-class service with comfort and ease</p>
+          <p><a href="/product" class="btn btn-success mt-3">Learn More</a></p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/carousel_1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption">
+          <h5>Seek Exciting Adventures</h5>
+          <p>Experience thrilling journeys to new and exotic destinations around the World</p>
+          <p><a href="/product" class="btn btn-success mt-3">Learn More</a></p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</header>
+<br><br>
+
+<div class="card mb-3" style="padding: 50px; border: none;">
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div class="card-body">
+        <% if (!user || user.admin === false) { %>
+          <h5 class="card-title">Contact Us to Book Packages Now</h5>
+          <% } %>
+        <% if (user && user.admin === true) { %>
+          <h5 class="card-title">View Users Contact Us Messages</h5>
+        <% } %>
+        <p class="card-text" style="margin-bottom: 20px; text-align: justify;">
+          Want to book our packages or have questions or need assistance? Don't hesitate to reach out to us! At TouristSpot, we're dedicated to providing exceptional customer service and ensuring your travel experience is smooth and enjoyable from start to finish. Our knowledgeable team is here to help you plan your dream vacation, book your tours, answer any inquiries you may have, and provide support throughout your journey. Contact us today and let us make your travel dreams a reality.
+        </p>
+        <% if (!user || user.admin === false) { %>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/contact-us" class="btn btn-success" style="margin-left: -5px;">Learn More</a>
+          </div>  
+        <% } %>
+        <% if (user && user.admin === true) { %>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/contacting" class="btn btn-success" style="margin-left: -5px;">View Messages</a>
+          </div>
+        <% } %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <img src="img/nature.jpeg" class="img-fluid rounded-end" style=" height: 250px; object-fit: cover;" alt="...">
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid" style="display: flex;flex-direction: row;justify-content: center;align-items: center;">
+</div>
+<br><br>
+
+<div class="highlight-background">
+  <h1 class="self1">Our Travel Packages</h1>
+  <br>
+  <div class="row">
+    <% let count = 0; %>
+<% items.forEach(function(item) { %>
+  <% if (count < 3) { %>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="<%= item.img %>" style="height: 200px; object-fit: cover;" alt="Tour Image">
+        <div class="card-body">
+          <h5 class="card-title"><%= item.source %> to <%= item.destination %></h5>
+          <p class="card-text font-weight-bold" style="text-align: left;color: green;">Rs. <%= item.price %></p>
+          <p class="card-text" style="text-align: justify;"><%= item.description %></p>
+        </div>
+      </div>
+    </div>
+    <% count++; %>
+  <% } %>
+<% }); %>
+  </div>
+  <% if (user && user.admin === true) { %>
+    <div style="text-align: center;">
+      <a href="/product" style="color: green;">Click here to Add, Update, Delete or See All Packages>></a>
+    </div>
+    <% }
+    else{ %>
+      <div style="text-align: center;">
+      <a href="/product" style="color: green;">Click here to See All Packages>></a>
+      </div>
+      <%}
+    %>
+
+</div>
+
+<div class="card mb-3" style="padding: 50px; border: none;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="img/about.jpeg" class="img-fluid rounded-start" style=" height: 250px; object-fit: cover;" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">About Us</h5>
+        <p class="card-text" style="margin-bottom: 20px; text-align: justify;">
+          TouristSpot is your ultimate destination for unforgettable travel experiences. Discover the world with us and create memories that last a lifetime. Our passion for travel drives us to provide exceptional services, ensuring that each journey is tailored to meet your unique needs and preferences. With a dedicated team of experts and a commitment to excellence, we strive to exceed your expectations at every turn. Join us on a journey of discovery, adventure, and unparalleled experiences. Your dream vacation awaits with TouristSpot.
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <a href="/about" class="btn btn-success align-self-end">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>

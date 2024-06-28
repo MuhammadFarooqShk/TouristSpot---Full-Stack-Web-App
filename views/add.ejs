@@ -1,0 +1,27 @@
+<!-- newCard.ejs -->
+<head>
+    <link rel="stylesheet" href="jqstyles2.css">
+  </head>
+            
+  <h1 class="self1">ADD<br><span>CRUD Operation</span></h1>    </header>
+      <br>
+
+<form action="/addCard" method="POST">
+    <label for="source">Source:</label>
+    <input type="text" id="source" name="source" required><br>
+  
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination" name="destination" required><br>
+  
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required></textarea><br>
+  
+    <label for="price">Price:</label>
+    <input type="text" id="price" name="price" required><br>
+  
+    <label for="image">Image URL:</label>
+    <input type="text" id="image" name="image" required><br>
+  
+    <button type="submit">Add Card</button>
+  </form>
+  

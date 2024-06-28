@@ -1,0 +1,58 @@
+<head>
+  <link rel="stylesheet" href="contactstyle.css">
+
+  <style>
+    .blur {
+      filter: blur(5px);
+      pointer-events: none;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .popup.show {
+      display: block;
+    }
+  </style>
+</head>
+<br><br><br>
+<div class="form_container">
+  <div class="container mt-5">
+  <div class="row justify-content-left">
+    <div class="col-md-6 <%= !user ? 'blur' : '' %>">
+      <h2 class="text-center mb-4">Please Fill The Form</h2>
+      <form id="contactForm" method="post">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" value="<%= user ? user.name : '' %>">
+          <div class="invalid-feedback">Please enter your name.</div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" value="<%= user ? user.email : '' %>">
+          <div class="invalid-feedback">Please enter a valid email address.</div>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea class="form-control" id="message" name="message" rows="5" placeholder="Enter your message"></textarea>
+          <div class="invalid-feedback">Please enter your message.</div>
+        </div>
+        <button type="submit" class="btn btn-success" id="submit_btn">Submit</button>
+      </form>
+    </div>
+    <div class="col-md-5">
+      <h1 class="self1">Contact US</h1>
+      <p class="self2">Want to book a Tour or have questions or feedback? Reach out to us via email at <strong>touristspot@gmail.com</strong> or fill out the contact form. We're here to assist you every step of the way. So, <strong>Book Now! </strong>by contacting us.</p>
+    </div>
+  </div>
+</div> 
+</div>          
+</header>
+<script src="script.js"></script>
